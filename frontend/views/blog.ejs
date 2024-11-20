@@ -1,0 +1,23 @@
+<%-include("./partials/header.ejs") %> 
+<main class="container">
+    <article class="blog-post text-center py-4 vh" data-id="<%=post.id %> ">
+        <div class="d-flex items-center justify-content-center">
+            <h2 class="display-1 mb-1"><%=post.title%></h2>
+            <span class=" dropdown ">
+                <a class="btn dropdown-toggle border border-warning" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item " href="/form/<%=post.id %>">Edit</a></li>
+                  <li><a class="dropdown-item " data-id="<%=post.id %>" id="delete" href="/">Delete</a></li>
+                </ul>
+            </span>
+        </div>
+        <h3 class="display-6 text-muted"><%=post.subtitle%></h3>
+        <p class="text-muted">
+          <%=post.date %> 
+          by <a class="link-offset-2 link-underline link-underline-opacity-0 text-muted" href="#"><%=post.author %></a>
+        </p>
+        <p><%=post.description%></p>
+      </article>     
+</main>
+<%-include("./partials/footer.ejs") %> 
