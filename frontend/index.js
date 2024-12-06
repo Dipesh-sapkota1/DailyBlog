@@ -14,7 +14,6 @@ app.use('/',blogRouter);
 
 
 
-
 app.listen(PORT,()=>{
     console.log(`User server has started on port ${PORT}...`);
 })

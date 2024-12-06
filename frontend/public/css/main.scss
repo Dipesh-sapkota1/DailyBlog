@@ -27,12 +27,11 @@ h1,h2,h3,h4,h5,h6{
     background-position: center center;
     background-repeat: no-repeat;
 }
-.error-state{
+.error{
     color: red;
-    text-align: center;
     display: none;
 }
-.error-msg{
-   display: block;
-}
+
+ 
+
 @import "../../node_modules/bootstrap/scss/bootstrap";

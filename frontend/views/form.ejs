@@ -43,27 +43,31 @@
 <% } else{ %>
    <main class="container d-flex flex-column ">
      <h1 class="text-center py-2">Create Your New Post</h1>
-     <small id="error" class="error-state">Please fill all the fields</small>
-      <form action="/post" method="post" class=" row g-3 pt-3 pb-5" id="form">
+     
+      <form action="/post" method="post" class=" row g-3 pt-3 pb-5" id="blog-form">
         <div class="col-md-6">
           <label for="title" class="form-label">Title</label>
-          <input type="text" name="title" class="form-control">
+          <input type="text" id="title" name="title" class="form-control">
+          <small class="error">*This field is required</small>
         </div>
         <div class="col-md-6">
           <label for="subtitle" class="form-label">Subtitle</label>
-          <input type="text" name="subtitle" class="form-control" >
+          <input type="text" id="subtitle" name="subtitle" class="form-control" >
+          <small class="error">*This field is required</small>
         </div>
         <div class="col-md-12">
           <label for="description" class="form-label">Description</label><br>
-          <textarea type="text" name="description" class="form-control description"></textarea>
+          <textarea type="text" id="description" name="description" class="form-control description"></textarea>
+          <small class="error">*This field is required</small>
         </div>
         <div class="col-md-12">
           <label for="author" class="form-label">Author</label>
-          <input type="text" name="author" class="form-control">
+          <input type="text" id="author" name="author" class="form-control">
+          <small class="error">*This field is required</small>
         </div>
         <div class="col-md-12">
           <label for="category" class="form-label">Category</label>
-          <select  class="form-select" name="category">
+          <select  class="form-select"  name="category">
             <option value="UI">UI/UX</option>
             <option value="IOT">IOT</option>
             <option value="Framework">Frame-works</option>

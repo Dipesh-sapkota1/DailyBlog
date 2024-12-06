@@ -13,7 +13,7 @@ blogRouter.get('/',async (req, res)=>{
     } catch (error) {
         console.error({message:`Error has occor due to ${error}`});
     }
-})
+});
 //Reders blogs page
 blogRouter.get('/blogs',async (req, res)=>{
     try {
@@ -49,8 +49,16 @@ blogRouter.get('/form/:id', async (req, res)=>{
     }
 })
 
+const validator = (req, res, next) => {
+        if(!req.body.title || !req.body.subtitle || !req.body.description || !req.body.author){
+            res.send({ message: "Error: cannot create empty post" });
+        }else{
+            next();
+        }
+    } 
+
 //Create a post request
-blogRouter.post("/post", async (req, res) => {
+blogRouter.post("/post", validator, async (req, res) => {
     try {
       const response = await axios.post(`${API_URI}/posts`, req.body);
       console.log(response.data);
