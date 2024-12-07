@@ -15,3 +15,5 @@ app.use('/',postsRouter);
 
 
 app.listen(PORT,()=>console.log(`Blog API is running on port ${PORT}`));
+
+module.exports = app;
