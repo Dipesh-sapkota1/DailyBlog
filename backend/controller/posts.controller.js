@@ -40,7 +40,7 @@ const editBlog = (req, res) =>{
 
     const currBlog = blogs.find(blog=> blog.id === id);
     const index = blogs.findIndex(blog=> blog.id === id);
-    db.query("UPDATE blog set title")
+ 
    if(index !== -1) {
         blogs[index].id = currBlog.id;
         if(req.body.title) blogs[index].title = req.body.title || currBlog.title; 
